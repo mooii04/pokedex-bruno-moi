@@ -1,85 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex</title>
+    <title>Pokedex</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS personalizado -->
     <style>
         body {
             background-color: #f8f9fa;
-            font-family: 'Press Start 2P', cursive;
+            font-family: 'Press Start 2P', cursive; /* Fuente pixelada */
         }
 
-        .card {
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
+        .pokemon-card {
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
         }
 
-        .card-title,
-        .card-text {
-            font-family: 'Press Start 2P', cursive;
+        .pokemon-image {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .pokemon-name {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .pokemon-number {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .pokemon-type {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo pixelado */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        /* Para que se vean tres cartas en cada fila */
+        .row-cols-3 > * {
+            margin-bottom: 20px;
         }
     </style>
 </head>
-
 <body>
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-12 text-center mb-4">
-                <h1 class="display-4" style="font-family: 'Press Start 2P', cursive;">Pokédex</h1>
+        <h1 class="text-center mb-5">Pokédex</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Primera tarjeta de Pokémon -->
+            <div class="col">
+                <div class="pokemon-card">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" class="pokemon-image">
+                    <div class="pokemon-number">#001</div>
+                    <div class="pokemon-name">Bulbasaur</div>
+                    <div class="pokemon-type">Planta/Veneno</div>
+                </div>
             </div>
+
+            <!-- Segunda tarjeta de Pokémon -->
+            <div class="col">
+                <div class="pokemon-card">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" class="pokemon-image">
+                    <div class="pokemon-number">#004</div>
+                    <div class="pokemon-name">Charmander</div>
+                    <div class="pokemon-type">Fuego</div>
+                </div>
+            </div>
+
+            <!-- Tercera tarjeta de Pokémon -->
+            <div class="col">
+                <div class="pokemon-card">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" class="pokemon-image">
+                    <div class="pokemon-number">#007</div>
+                    <div class="pokemon-name">Squirtle</div>
+                    <div class="pokemon-type">Agua</div>
+                </div>
+            </div>
+
+            <!-- Añade más Pokémon aquí -->
         </div>
-        <div class="row">
-            <!-- Example Pokémon Card -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-                        class="card-img-top" alt="Bulbasaur">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Bulbasaur</h5>
-                        <p class="card-text">#001</p>
-                        <p class="card-text">Grass, Poison</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-                            class="card-img-top" alt="Bulbasaur">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Bulbasaur</h5>
-                            <p class="card-text">#001</p>
-                            <p class="card-text">Grass, Poison</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="card">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-                    class="card-img-top" alt="Bulbasaur">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Bulbasaur</h5>
-                    <p class="card-text">#001</p>
-                    <p class="card-text">Grass, Poison</p>
-                </div>
-            </div>
-        </div>
-        <!-- Repeat similar blocks for other Pokémon -->
-    </div>
     </div>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
