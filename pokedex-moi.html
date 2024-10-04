@@ -10,68 +10,73 @@
     <style>
         body {
             font-family: 'Press Start 2P', cursive;
-            background-image: url('fondo.jpg');
             color: #333;
             overflow-x: hidden;
             position: relative;
             background-color: #f0f5f0;
         }
 
-        .header {
-            padding: 20px 0;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-            position: sticky;
+        .background {
+            position: fixed;
             top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px); /* Añadir desenfoque */
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            z-index: -1;
         }
 
-        .nav-menu {
+        .navbar {
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar-brand img {
+            height: 70px;
+        }
+
+        .nav-container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            flex-grow: 1;
         }
 
-        .nav-menu a {
-            margin: 0 20px;
-            font-size: 1.5rem;
-            color: #ffc72c;
-            font-weight: 600;
-            text-shadow: 2px 2px 5px #000;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: #ffffff;
-            text-shadow: 4px 4px 10px #000;
+        .nav-link {
+            color: #f7c836 !important;
+            padding: 10px 20px;
+            margin-left: 200px;
+            font-size: 1.2rem;
+            text-shadow: -1px -1px 0 #45419a, 1px -1px 0 #45419a, -1px 1px 0 #45419a, 1px 1px 0 #45419a;
         }
 
         .pokemon-info {
             display: flex;
-            justify-content: space-around;
             align-items: center;
             padding: 60px 0;
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
         }
 
         .pokemon-info img {
-            max-width: 320px;
+            max-width: 400px; /* Aumenta el tamaño máximo de la imagen */
             width: 100%;
             border: 6px solid white;
             border-radius: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         .pokemon-details {
             margin-left: 40px;
+            color: white;
         }
 
         .pokemon-details h2 {
             font-size: 3rem;
-            color: #2b8a3e;
+            color: white;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 15px;
@@ -104,7 +109,7 @@
             list-style: none;
             padding: 0;
             font-size: 1.2rem;
-            color: #555;
+            color: white;
         }
 
         .pokemon-details ul li {
@@ -136,14 +141,17 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="nav-menu">
-            <a href="#">Pokédex</a>
-            <a href="#">Items</a>
-            <a href="#">Moves</a>
-            <a href="#">Games</a>
-        </nav>
-    </header>
+    <div class="background"></div>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="file:///C:/Users/delgado.hebru24_tria/Downloads/logo.png" alt="Pokedex Logo">
+        </a>
+        <div class="nav-container">
+            <a class="nav-link" href="#">Items</a>
+            <a class="nav-link" href="#">Moves</a>
+            <a class="nav-link" href="#">Games</a>
+        </div>
+    </nav>
 
     <section class="pokemon-info container">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur">
