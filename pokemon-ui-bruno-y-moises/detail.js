@@ -15,14 +15,24 @@ $(document).ready(function () {
       water: 'url("fondoagua.jpg")',
       bug: 'url(fondobicho.jpg)',
       flying: 'url("fondovolador.jpg")',
-      // Añade más tipos y sus respectivas imágenes de fondo aquí
+      normal: 'url("fondonormal.jpg")',
+      electric: 'url("fondoelectrico.jpg")',
+      ground: 'url("fondotierra.jpg")',
+      fairy: 'url("fondohada.jpg")',
+      fighting: 'url("fondolucha.jpg")',
+      psychic: 'url("fondopsiquico.jpg")',
+      rock: 'url("fondoroca.jpg")',
+      steel: 'url("fondometal.jpg")',
+      ice: 'url("fondohielo.jpg")',
+      ghost: 'url("fondofantasma.jpg")',
+      dragon: 'url("fondodragon.jpg")',
+      dark: 'url("fondosiniestro.jpg")',
     };
 
     const backgroundImageUrl = backgroundImageUrls[type] || 'url("default-background.jpg")';
     $('.background').css('background-image', backgroundImageUrl);
   }
 
-  // Llama a la función changeBackgroundImage con el tipo del Pokémon
   $.ajax({
     url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
     method: 'GET',
