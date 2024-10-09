@@ -49,6 +49,12 @@ $(document).ready(function() {
                 });
             });
 
+            $('.pokemon-card').click(function() {
+                var pokemonId = $(this).data('id');
+                window.location.href = 'detail.html?id=' + pokemonId;
+            });
+            
+
             $.when.apply($, requests).done(function() {
                 var responses = Array.prototype.slice.call(arguments);
                 responses.forEach(function(response) {
