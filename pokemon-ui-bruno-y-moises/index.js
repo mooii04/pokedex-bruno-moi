@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     function fetchPokemonData() {
         $.ajax({
-            url: 'https://pokeapi.co/api/v2/pokemon?limit=151',
+            url: 'https://pokeapi.co/api/v2/pokemon?limit=251',
             method: 'GET',
             success: function(response) {
                 console.log('Fetched Pokémon list:', response.results);
