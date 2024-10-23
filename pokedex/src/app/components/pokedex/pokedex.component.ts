@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokedex } from '../../models/pokedex.interface';
 import { PokedexService } from '../../services/pokedex.service';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pokedex',
@@ -9,14 +10,14 @@ import { PokedexService } from '../../services/pokedex.service';
 })
 export class PokedexComponent implements OnInit {
 
+
   listadoPokemon: Pokedex[] = [];
 
   constructor(private pokedexService : PokedexService) { }
 
   ngOnInit(): void {
-    this.pokedexService.getPoxedex().subscribe(respuesta => {
+    this.pokedexService.getPokedex(1000).subscribe(respuesta => {
       this.listadoPokemon = respuesta.results;
     });
   }
-
 }

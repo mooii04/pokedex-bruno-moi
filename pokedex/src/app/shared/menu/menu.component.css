@@ -1,0 +1,23 @@
+.navbar {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-brand img {
+    height: 70px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+.nav-link {
+    color: #f7c836;
+    padding: 10px 20px;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    text-shadow: -1px -1px 0 #45419a, 1px -1px 0 #45419a, -1px 1px 0 #45419a, 1px 1px 0 #45419a;
+}
