@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        @for(item of listadoItems; track item.name){
+        <div class="col-md-4">
+            <div class="card mb-4 item-card">
+                <div class="row no-gutters">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title item-name">{{ item.name }}</h5>
+                            <!--<p class="card-text">{{ item.description }}</p>
+                            <a [href]="item.url" target="_blank" class="btn btn-primary">More Info</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

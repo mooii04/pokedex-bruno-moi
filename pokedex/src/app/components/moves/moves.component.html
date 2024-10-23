@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        @for(move of listadoMoves; track move.name){
+        <div class="col-md-4">
+            <div class="card mb-4 move-card">
+                <div class="row no-gutters">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title move-name">{{ move.name }}</h5>
+                            <!--<p class="card-text">{{ move.description }}</p>
+                            <a [href]="move.url" target="_blank" class="btn btn-primary">More Info</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
