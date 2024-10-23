@@ -12,11 +12,8 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">{{ pokemon.name }}</h5>
-                            <!--<p class="card-text">#{{ pokemon.number }}</p>
-                            <div class="pokemon-types">
-                                <span *ngFor="let type of pokemon.types" [ngClass]="'type-' + type">{{ type }}</span>
-                            </div>
-                            <a [href]="pokemon.url" target="_blank" class="btn btn-primary">More Info</a>-->
+                            <p class="card-text">#{{ pokemon.url.split('/')[pokemon.url.split('/').length - 2] }}</p>
+                            <!--<a [href]="pokemon.url" target="_blank" class="btn btn-primary">More Info</a>-->
                         </div>
                     </div>
                 </div>
