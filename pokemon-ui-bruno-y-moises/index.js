@@ -7,7 +7,9 @@ $(document).ready(function() {
 
     function fetchStarWarsData() {
         $.ajax({
-            url: 'https://swapi.dev/api/people/',
+
+            url: 'https://pokeapi.co/api/v2/pokemon?limit=251',
+
             method: 'GET',
             success: function(response) {
                 console.log('Fetched Star Wars characters list:', response.results);
