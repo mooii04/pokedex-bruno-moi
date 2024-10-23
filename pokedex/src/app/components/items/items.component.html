@@ -5,6 +5,10 @@
             <div class="card mb-4 item-card">
                 <div class="row no-gutters">
                     <div class="col-md-8">
+                        <div class="col-md-4">
+                            <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/' + item.name + '.png'"
+                                 class="card-img-left img-fluid rounded-start">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title item-name">{{ item.name }}</h5>
                             <!--<p class="card-text">{{ item.description }}</p>
