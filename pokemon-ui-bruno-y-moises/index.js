@@ -1,24 +1,18 @@
 $(document).ready(function() {
-    fetchPokemonData();
+    fetchStarWarsData();
 
     $('#btn-get-data').click(function() {
-        fetchPokemonData();
+        fetchStarWarsData();
     });
 
-    function fetchPokemonData() {
+    function fetchStarWarsData() {
         $.ajax({
-            url: 'https://pokeapi.co/api/v2/pokemon?limit=151',
+            url: 'https://swapi.dev/api/people/',
             method: 'GET',
             success: function(response) {
-                console.log('Fetched Pokémon list:', response.results);
+                console.log('Fetched Star Wars characters list:', response.results);
 
-                response.results.sort(function(a, b) {
-                    var idA = parseInt(a.url.split('/').slice(-2, -1)[0]);
-                    var idB = parseInt(b.url.split('/').slice(-2, -1)[0]);
-                    return idA - idB;
-                });
-
-                displayPokemon(response.results);
+                displayCharacters(response.results);
             },
             error: function(error) {
                 console.error('Error fetching data:', error);
@@ -26,62 +20,54 @@ $(document).ready(function() {
         });
     }
 
-    function displayPokemon(pokemonList) {
+    function displayCharacters(characterList) {
         var dataContent = $('#data-content');
         dataContent.empty();
 
         var index = 0;
         function fetchNextBatch() {
-            if (index >= pokemonList.length) {
-                $('.pokemon-card').click(function() {
-                    var pokemonId = $(this).data('id');
-                    window.location.href = 'detail.html?id=' + pokemonId;
+            if (index >= characterList.length) {
+                $('.character-card').click(function() {
+                    var characterUrl = $(this).data('url');
+                    window.location.href = 'detail.html?url=' + encodeURIComponent(characterUrl);
                 });
                 return;
             }
 
-            var rowContent = $('<div class="pokemon-row"></div>');
-            var batch = pokemonList.slice(index, index + 3);
-            var requests = batch.map(function(pokemon) {
+            var rowContent = $('<div class="character-row"></div>');
+            var batch = characterList.slice(index, index + 3);
+            var requests = batch.map(function(character) {
                 return $.ajax({
-                    url: pokemon.url,
+                    url: character.url,
                     method: 'GET'
                 });
             });
 
-            $('.pokemon-card').click(function() {
-                var pokemonId = $(this).data('id');
-                window.location.href = 'detail.html?id=' + pokemonId;
-            });
-            
-
             $.when.apply($, requests).done(function() {
                 var responses = Array.prototype.slice.call(arguments);
                 responses.forEach(function(response) {
-                    var pokemonData = response[0];
-                    console.log('Fetched Pokémon data:', pokemonData);
-                    var pokemonCard = `
-                        <div class="pokemon-card" data-id="${pokemonData.id}">
-                            <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}" class="pokemon-image">
-                            <div class="pokemon-info">
-                                <div class="pokemon-name">${capitalizeFirstLetter(pokemonData.name)}</div>
-                                <div class="pokemon-number">#${pokemonData.id.toString().padStart(3, '0')}</div>
-                            </div>
-                            <div class="pokemon-types">
-                                ${pokemonData.types.map(function(typeInfo) {
-                                    return '<span class="type-badge ' + typeInfo.type.name + '">' + capitalizeFirstLetter(typeInfo.type.name) + '</span>';
-                                }).join('')}
+                    var characterData = response[0];
+                    console.log('Fetched Star Wars character data:', characterData);
+                    var characterCard = `
+                        <div class="character-card" data-url="${characterData.url}">
+                            <div class="character-info">
+                                <div class="character-name">${capitalizeFirstLetter(characterData.name)}</div>
+                                <div class="character-details">
+                                    <div>Height: ${characterData.height}</div>
+                                    <div>Mass: ${characterData.mass}</div>
+                                    <div>Gender: ${capitalizeFirstLetter(characterData.gender)}</div>
+                                </div>
                             </div>
                         </div>
                     `;
-                    rowContent.append(pokemonCard);
+                    rowContent.append(characterCard);
                 });
 
                 dataContent.append(rowContent);
                 index += 3;
                 fetchNextBatch();
             }).fail(function(error) {
-                console.error('Error fetching Pokémon data:', error);
+                console.error('Error fetching Star Wars character data:', error);
                 index += 3;
                 fetchNextBatch();
             });
