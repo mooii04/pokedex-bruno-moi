@@ -1,1 +1,37 @@
-<p>pokedex works!</p>
+<div class="pokedex-container">
+    @for(pokemon of listadoPokemon; track pokemon.name){
+    <div class="pokemon-card">
+        <h2>{{ pokemon.name }}</h2>
+        <a [href]="pokemon.url" target="_blank">More Info</a>
+    </div>
+    }
+</div>
+
+<style>
+    .pokedex-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .pokemon-card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 16px;
+        width: 200px;
+        text-align: center;
+    }
+
+    .pokemon-card h2 {
+        margin: 0 0 8px;
+    }
+
+    .pokemon-card a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .pokemon-card a:hover {
+        text-decoration: underline;
+    }
+</style>
