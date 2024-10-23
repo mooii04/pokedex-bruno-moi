@@ -1,15 +1,28 @@
-<div class="pokedex-container">
-    @for(pokemon of listadoPokemon; track pokemon.name){
-    <div class="pokemon-card">
-       <!--<img [src]="pokemon.imageUrl" alt="{{pokemon.name}}" class="pokemon-image" />--> 
-        <div class="pokemon-info">
-            <h2>{{ pokemon.name }}</h2>
-            <!--<p class="pokemon-number">#{{ pokemon.number }}</p>
-            <div class="pokemon-types">
-                <span *ngFor="let type of pokemon.types" [ngClass]="'type-' + type">{{ type }}</span>
+<div class="container">
+    <div class="row">
+        @for(pokemon of listadoPokemon; track pokemon.name){
+        <div class="col-md-4">
+            <div class="card mb-4 pokemon-card">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img [src]="'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/'
+                             + pokemon.url.split('/')[pokemon.url.split('/').length - 2].padStart(3, '0') +  '.png'"
+                        class="card-img-left img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ pokemon.name }}</h5>
+                            <!--<p class="card-text">#{{ pokemon.number }}</p>
+                            <div class="pokemon-types">
+                                <span *ngFor="let type of pokemon.types" [ngClass]="'type-' + type">{{ type }}</span>
+                            </div>
+                            <a [href]="pokemon.url" target="_blank" class="btn btn-primary">More Info</a>-->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a [href]="pokemon.url" target="_blank" class="more-info-link">More Info</a>-->
         </div>
+        }
     </div>
-    }
 </div>
+

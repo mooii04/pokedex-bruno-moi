@@ -8,12 +8,20 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { ItemsComponent } from './components/items/items.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MovesComponent } from './components/moves/moves.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokedexComponent,
-    MenuComponent
+    MenuComponent,
+    PokemonComponent,
+    ItemsComponent,
+    PageNotFoundComponent,
+    MovesComponent
   ],
   imports: [
     BrowserModule,
