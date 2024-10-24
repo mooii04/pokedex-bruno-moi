@@ -5,8 +5,8 @@
             <div class="card mb-4 pokemon-card">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img [src]="'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/'
-                             + pokemon.url.split('/')[pokemon.url.split('/').length - 2].padStart(3, '0') +  '.png'"
+                        <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' 
+                             + pokemon.url.split('/')[pokemon.url.split('/').length - 2] + '.png'"
                         class="card-img-left img-fluid rounded-start">
                     </div>
                     <div class="col-md-8">
