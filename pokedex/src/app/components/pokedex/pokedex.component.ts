@@ -20,4 +20,6 @@ export class PokedexComponent implements OnInit {
       this.listadoPokemon = respuesta.results;
     });
   }
+
+  
 }
