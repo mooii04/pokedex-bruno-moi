@@ -21,6 +21,4 @@ export class PokedexService {
     return this.http.get<PokemonResponse>(`${this.apiUrl}/${id}`);
   }
 
-  
-
 }
