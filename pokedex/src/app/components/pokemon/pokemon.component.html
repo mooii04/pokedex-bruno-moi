@@ -1,19 +1,32 @@
-<div class="col-md-4">
-    <div class="card mb-4 pokemon-card">
-        <div class="row no-gutters">
-            <div class="row no-gutters">
-            <div class="col-md-4"></div>
-                <img [src]="'https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/' + pokemon?.id + '.png'" alt="{{pokemon?.name}}" class="img-fluid">
-            </div>
-                <div class="col-md-8">
-                    <p>Nombre: {{pokemon?.name}}</p>
-                </div>
-                <div class="col-md-8">
-                    <p>ID: {{pokemon?.id}}</p>
-                </div>
-                <div class="col-md-8">
-                    <p>Tipo: <span *ngFor="let type of pokemon?.types">{{type.type.name}} </span></p>
-                </div>
-            </div>
+<div class="pokemon-card">
+    <div class="pokemon-header">
+        <h2>{{pokemon!.name}}</h2>
+    </div>
+    <div class="pokemon-content">
+        <div class="pokemon-image">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon?.id}}.png"
+                alt="{{pokemon?.name}}">
+        </div>
+        <div class="pokemon-details">
+            <ul>
+                <li><strong>Altura:</strong> {{pokemon?.height}} dm</li>
+                <li><strong>Peso:</strong> {{pokemon?.weight}} hg</li>
+                <li><strong>Experiencia base:</strong> {{pokemon?.base_experience}}</li>
+                <li><strong>Habilidades:</strong>
+                    <ul>
+                        @for (item of pokemon?.abilities; track item.ability.name){
+                        <li>{{item.ability.name}}</li>
+                        }
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
+    <div class="pokemon-types">
+        <p>Tipo:
+            @for (item of pokemon?.types; track item.type.name){
+            <span>{{item.type.name}} </span>
+            }
+        </p>
+    </div>
+</div>
