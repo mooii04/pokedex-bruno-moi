@@ -13,7 +13,7 @@ export class MovesComponent {
   constructor(private movesService : MovesService) { }
 
   ngOnInit(): void {
-    this.movesService.getItems().subscribe(respuesta => {
+    this.movesService.getMoves(1002).subscribe(respuesta => {
       this.listadoMoves = respuesta.results;
     });
 }
