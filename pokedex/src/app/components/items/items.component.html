@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row">
+        
         @for(item of listadoItems; track item.name){
-        <div class="col-md-4">
+        <div class="col-md-4" [routerLink]="['/item-detail', item.url.split('/')[item.url.split('/').length - 2]]">
             <div class="card mb-4 item-card">
                 <div class="row no-gutters">
                     <div class="col-md-8">
