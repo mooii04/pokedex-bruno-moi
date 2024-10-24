@@ -1,19 +1,18 @@
 <div class="container">
     <div class="row">
         @for(pokemon of listadoPokemon; track pokemon.name){
-        <div class="col-md-4">
+        <div class="col-md-4" [routerLink]="['/pokemon-detail', pokemon.url.split('/')[pokemon.url.split('/').length - 2]]" >
             <div class="card mb-4 pokemon-card">
                 <div class="row no-gutters">
                     <div class="col-md-4">
                         <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' 
                              + pokemon.url.split('/')[pokemon.url.split('/').length - 2] + '.png'"
-                        class="card-img-left img-fluid rounded-start">
+                            class="card-img-left img-fluid rounded-start">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">{{ pokemon.name }}</h5>
                             <p class="card-text">#{{ pokemon.url.split('/')[pokemon.url.split('/').length - 2] }}</p>
-                            <!--<a [href]="pokemon.url" target="_blank" class="btn btn-primary">More Info</a>-->
                         </div>
                     </div>
                 </div>
@@ -22,4 +21,3 @@
         }
     </div>
 </div>
-
