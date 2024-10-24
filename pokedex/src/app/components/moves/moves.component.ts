@@ -10,6 +10,8 @@ import { Moves } from '../../models/moves.interface';
 export class MovesComponent {
   listadoMoves: Moves[] = [];
 
+  
+
   constructor(private movesService : MovesService) { }
 
   ngOnInit(): void {

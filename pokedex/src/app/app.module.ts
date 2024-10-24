@@ -12,6 +12,8 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { ItemsComponent } from './components/items/items.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MovesComponent } from './components/moves/moves.component';
+import { ItemDetailsComponent } from './components/item-details/item-details.component';
+import { MovesDetailsComponent } from './components/moves-details/moves-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MovesComponent } from './components/moves/moves.component';
     PokemonComponent,
     ItemsComponent,
     PageNotFoundComponent,
-    MovesComponent
+    MovesComponent,
+    ItemDetailsComponent,
+    MovesDetailsComponent
   ],
   imports: [
     BrowserModule,
