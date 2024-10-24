@@ -10,7 +10,7 @@ export class MovesService {
 
   constructor(private http: HttpClient) { }
 
-  getItems() : Observable<MovesResponse> {
-    return this.http.get('https://pokeapi.co/api/v2/move') as Observable<MovesResponse>;
+  getMoves(limit: number) : Observable<MovesResponse> {
+    return this.http.get(`https://pokeapi.co/api/v2/move?limit=${limit}`) as Observable<MovesResponse>;
   }
 }
