@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.item-card {
+    width: 20%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-details {
+    width: 20%;
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: left;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.item-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item-details ul ul {
+    padding-left: 20px;
+}
+
+.item-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.stats-section {
+    width: 20%;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0 auto; /* Centra el contenido en el eje X */
+}
+
+.item-description {
+    width: 50%;
+    padding: 20px;
+    margin: 0 auto; /* Centra el contenido en el eje X */
+    font-size: 1.2em;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.item-description strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.item-description span {
+    display: block;
+    margin-bottom: 5px;
+}
