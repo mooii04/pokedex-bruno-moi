@@ -17,6 +17,7 @@ export class MovesDetailsComponent implements OnInit{
     private movesService : MovesService) { }
 
 
+
     ngOnInit(): void {
       const id = this.route.snapshot.paramMap.get('id');
       if (id) {

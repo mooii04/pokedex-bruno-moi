@@ -16,6 +16,15 @@ export class PokemonComponent implements OnInit {
     private pokedexService: PokedexService
   ) {}
 
+  getPokemonTypeClass(types: any[]): string {
+    if (!types || types.length === 0) {
+      return '';
+    }
+
+    const primaryType = types[0].type.name;
+    return `bg-${primaryType}`;
+  }
+
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
