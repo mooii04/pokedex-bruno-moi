@@ -1,38 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pokemon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+
 .pokemon-card {
-    width: 50%;
-    margin: 0 auto;
+    width: 20%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 1.5em;
     text-align: center;
-}
-
-.pokemon-header h2 {
-    font-size: 2em;
-    text-align: center;
-}
-
-.pokemon-content {
+    background-color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pokemon-image {
-    flex: 1;
-    text-align: center;
-}
-
-.pokemon-image img {
-    width: 450px;
-    height: 450px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pokemon-details {
-    flex: 2;
-    text-align: center;
+    width: 20%;
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: left;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pokemon-card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
 }
 
 .pokemon-details ul {
@@ -40,20 +46,22 @@
     padding: 0;
 }
 
-.pokemon-details li {
-    margin: 10px 0;
+.pokemon-details ul ul {
+    padding-left: 20px;
 }
 
-.pokemon-types {
+.pokemon-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.stats-section {
+    width: 20%;
+    padding: 20px;
     text-align: center;
-    margin-top: 20px;
-}
-
-.pokemon-types span {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f0f0f0;
+    justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0 auto; /* Centra el contenido en el eje X */
 }

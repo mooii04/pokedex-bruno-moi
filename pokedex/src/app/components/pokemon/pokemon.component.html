@@ -1,32 +1,45 @@
-<div class="pokemon-card">
-    <div class="pokemon-header">
-        <h2>{{pokemon!.name}}</h2>
-    </div>
-    <div class="pokemon-content">
-        <div class="pokemon-image">
+<div class="pokemon-wrapper">
+    <div class="pokemon-card">
+        <div class="pokemon-container">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon?.id}}.png"
                 alt="{{pokemon?.name}}">
         </div>
-        <div class="pokemon-details">
-            <ul>
-                <li><strong>Altura:</strong> {{pokemon?.height}} dm</li>
-                <li><strong>Peso:</strong> {{pokemon?.weight}} hg</li>
-                <li><strong>Experiencia base:</strong> {{pokemon?.base_experience}}</li>
-                <li><strong>Habilidades:</strong>
-                    <ul>
-                        @for (item of pokemon?.abilities; track item.ability.name){
-                        <li>{{item.ability.name}}</li>
-                        }
-                    </ul>
-                </li>
-            </ul>
+    </div>
+
+    <div class="pokemon-details">
+        <h2>{{pokemon!.name}}</h2>
+        <div class="pokemon-types">
+            <p>
+                @for (item of pokemon?.types; track item.type.name){
+                <span>{{item.type.name}} </span>
+                }
+            </p>
+        </div>
+        <ul>
+            <li><strong>Altura:</strong> {{pokemon?.height}} dm</li>
+            <li><strong>Peso:</strong> {{pokemon?.weight}} hg</li>
+            <li><strong>Experiencia base:</strong> {{pokemon?.base_experience}}</li>
+            <li><strong>Habilidades:</strong>
+                <span>
+                    @for (item of pokemon?.abilities; track item.ability.name){
+                    {{item.ability.name}}
+                    }
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="stats-section text-center">
+    @for (stat of pokemon?.stats; track stat) {
+    <div class="stat-container">
+        <span>{{ stat.stat.name }}</span>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" [style.width.%]="(stat.base_stat / 255) * 100"
+                [attr.aria-valuenow]="stat.base_stat" aria-valuemin="0" aria-valuemax="255">
+                {{ stat.base_stat }}
+            </div>
         </div>
     </div>
-    <div class="pokemon-types">
-        <p>Tipo:
-            @for (item of pokemon?.types; track item.type.name){
-            <span>{{item.type.name}} </span>
-            }
-        </p>
-    </div>
+    }
 </div>
