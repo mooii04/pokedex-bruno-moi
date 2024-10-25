@@ -11,13 +11,13 @@ export class MovesService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = 'https://pokeapi.co/api/v2/item';
+  private apiUrl = 'https://pokeapi.co/api/v2/move';
 
   getMoves(limit: number) : Observable<MovesResponse> {
     return this.http.get(`https://pokeapi.co/api/v2/move?limit=${limit}`) as Observable<MovesResponse>;
   }
 
-  getItemId(id: number): Observable<MovesDetailsResponse> {
+  getMoveId(id: number): Observable<MovesDetailsResponse> {
     return this.http.get<MovesDetailsResponse>(`${this.apiUrl}/${id}`);
   }
 }
