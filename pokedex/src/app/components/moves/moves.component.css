@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Ejemplo de fuente pixelada */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .move-card {
     padding: 0;
@@ -16,11 +16,11 @@
 
 .move-card .card-title {
     margin-left: 0;
-    font-family: 'Press Start 2P', cursive; /* Aplica la fuente pixelada */
+    font-family: 'Press Start 2P', cursive; 
 }
 
 .move-name {
   font-size: 0.7rem;
   font-weight: bold;
-  font-family: 'Press Start 2P', cursive; /* Aplica la fuente pixelada */
+  font-family: 'Press Start 2P', cursive; 
 }

@@ -1,4 +1,5 @@
-<div class="pokemon-wrapper">
+<body [ngClass]="getPokemonTypeClass(pokemon?.types || [])">
+<div class="pokemon-wrapper" >
     <div class="pokemon-card">
         <div class="pokemon-container">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon?.id}}.png"
@@ -10,15 +11,14 @@
         <h2>{{pokemon!.name}}</h2>
         <div class="pokemon-types">
             <p>
-                @for (item of pokemon?.types; track item.type.name){
-                <span>{{item.type.name}} </span>
-                }
+            @for (item of pokemon?.types; track item.type.name){
+            <span class="type-{{item.type.name}}">{{item.type.name}}</span>
+            }
             </p>
         </div>
         <ul>
-            <li><strong>Altura:</strong> {{pokemon?.height}} dm</li>
-            <li><strong>Peso:</strong> {{pokemon?.weight}} hg</li>
-            <li><strong>Experiencia base:</strong> {{pokemon?.base_experience}}</li>
+            <li><strong>Altura:</strong> {{pokemon!.height / 10}} m</li>
+            <li><strong>Peso:</strong> {{pokemon!.weight / 10}} kg</li>
             <li><strong>Habilidades:</strong>
                 <span>
                     @for (item of pokemon?.abilities; track item.ability.name){
@@ -43,3 +43,5 @@
     </div>
     }
 </div>
+
+</body>
