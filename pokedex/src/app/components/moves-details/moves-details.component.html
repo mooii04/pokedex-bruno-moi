@@ -1,14 +1,18 @@
-<div class="col-md-4">
-    <div class="card mb-4 pokemon-card">
-        <div class="row no-gutters">
-            <div class="row no-gutters">
-                <div class="col-md-8">
-                    <p>Nombre: {{move?.name}}</p>
-                </div>
-                <div class="col-md-8">
-                    <p>ID: {{move?.id}}</p>
-                </div>
+<div class="item-details">
+    <h2>{{move?.name}}</h2>
+    <ul>
+        <li><strong>ID:</strong> {{move?.id}}</li>
+        <li><strong>Type:</strong> {{move?.type?.name}}</li>
+        <li><strong>Power:</strong> {{move?.power}}</li>
+        <li><strong>PP:</strong> {{move?.pp}}</li>
+        <li><strong>Accuracy:</strong> {{move?.accuracy}}</li>
+    </ul>
+</div>
 
-            </div>
-        </div>
-    </div>
+<div class="item-description">
+    @for(effect of move?.effect_entries; track move?.effect_entries){
+    <span>
+        {{effect.effect}}
+    </span>
+    }
+</div>
